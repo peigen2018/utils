@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>hello</title>
+    <!--jquery.validate-->
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+  <script type="text/javascript">
+  function sendAjax(){
+    
+    $.ajax({ 
+            url: $("#url").val(),
+            type:$("#method").val(), 
+            success: function(data){
+              console.info("success")
+              console.info(data)
+            }});
+  }
+        
+  </script>
+</head>
+<body>
+<div class="container">
+   url:<input id="url" type="text" value="http://localhost:5001/"/><br/>
+   method:<input id="method" type="text" value="GET"/><br/>
+   headers:<br/>
+            <input id="header1" value="" placeholder="res:red"><br/>
+            <input id="header2" value="" placeholder="bed:yellow"><br/>
+   <input type="button" value="发送" onclick="sendAjax()">
+   <br/>
+   <input id="url" type="text" value="cookie"/><br/>
+   <input id="url" type="text" value=""/><br/>
+   <input type="button" value="cookie" onclick="sendAjax()">
+</div>
+</body>
+</html>
